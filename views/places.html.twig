@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Places</title>
+</head>
+<body>
+    <h1>List of Places</h1>
+    {% if places is not empty %}
+        <p>List all the places you have gone:</p>
+        <ul>
+            {% for place in places %}
+                <li>{{ place.getCity }}</li>
+                <ul>
+                    <li>{{ place.getFood }}</li>
+                    <li>{{ place.getDestination }}</li>
+                </ul>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action='/places' method='post'>
+        <label for='city'>What city have you been to?</label>
+        <input name='city' class='form-control' type='text'>
+        <label for='favorite_food'>What was the best food you tasted?</label>
+        <input name='favorite_food' class='form-control' type='text'>
+        <label for='destination'>What was your favorite destination?</label>
+        <input name='destination' class='form-control' type='text'>
+        <button type='submit' class='btn-success'>Submit!</button>
+    </form>
+
+    <form action='/delete_places' method='post'>
+        <button type='submit'>Clear</button>
+    </form>
+
+</body>
+</html>
