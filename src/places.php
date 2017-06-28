@@ -41,13 +41,13 @@
             $this->destination = $new_destination;
         }
 
-        // function save()
-        // {
-        //     array_push($_SESSION['city'], $this);
-        // }
-        //  static function getAll()
-        //  {
-        //     return $_SESSION['city'];
-        //  }
+        function save()
+        {
+            array_push($_SESSION['list_of_places'], $this);
+        }
+         static function getAll()
+         {
+            return $_SESSION['list_of_places'];
+         }
     }
 ?>
